@@ -15,5 +15,12 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "static_pages";
+@import "normalize";
 @import "posts";
+
+body { padding-top: 70px; }
+
+p.date {
+	font-size: 1.1em;
+	font-style: italic;
+}
