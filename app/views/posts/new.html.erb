@@ -1,7 +1,17 @@
 <h1>New Post</h1>
 <%= form_for :post, url: posts_path do |f| %>
+  <% if @post.errors.any? %>
+    <div id="errors">
+      <h3><%= pluralize(@post.errors.count, "error") %> prevented this post from saving.</h3>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li id="error-message"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
-    <%= f.label :tile %><br>
+    <%= f.label :tilte %><br>
     <%= f.text_field :title %>
   </p>
 
