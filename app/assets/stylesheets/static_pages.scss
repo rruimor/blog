@@ -2,3 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.about-wrapper {
+	text-align: center;
+
+	#avatar {
+		border: 2px solid;
+	    border-radius: 25px;
+	    margin-bottom: 20px;
+
+	}
+}
