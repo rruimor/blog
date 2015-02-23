@@ -7,8 +7,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      flash[:success] = "<strong>Success!</strong> The post has been successfully created!"
       redirect_to @post
     else
+      flash[:danger] = "<strong>Error</strong> - The post could not be created."
       render 'new'
     end
   end
@@ -29,6 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(params[:post].permit(:title, :body))
+      flash[:success] = "<strong>Success!</strong> The post has been updated!"
       redirect_to @post
     else
       render 'edit'
@@ -39,6 +42,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @post.destroy
+
+    flash[:danger] = "<strong>Success!</strong> The post has been successfully deleted."
 
     redirect_to posts_path
   end
