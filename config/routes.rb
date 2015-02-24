@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  # get 'static_pages/index'
   root 'posts#index'
   resources :posts do
     resources :comments
   end
 
-  get     'about',   to: 'static_pages#about'
+  get     'about',          to: 'static_pages#about'
+  get     'admin/login',    to: 'sessions#new'
+  post    'admin/login',    to: 'sessions#create'
+  delete  'admin/logout',   to: 'sessions#destroy'
   
 
   # The priority is based upon order of creation: first created -> highest priority.

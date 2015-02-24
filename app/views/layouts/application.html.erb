@@ -27,6 +27,9 @@
          <li class="icon-header"><a href="https://twitter.com/rafapocho"><span class="icon-twitter2"></span></a></li>
          <li class="icon-header"><a href="https://github.com/rruimor"><span class="icon-github"></span></a></li>
          <li class="icon-header"><a href="mailto:rruimor459@gmail.com"><span class="glyphicon glyphicon-envelope"></span></a></li>
+         <% if logged_in? %>
+           <li><%= link_to "Log out", admin_logout_path, method: "delete" %></li>
+         <% end %>
         </ul>
       </div>  
     </div>
