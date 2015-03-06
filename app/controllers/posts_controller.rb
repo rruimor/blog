@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
   def new
-    @post = Post.new
+    # logged_in? ? @post = Post.new : redirect_to admin_login_path
+    if logged_in?
+      @post = Post.new
+    else
+      # flash[:danger] = not_logged_message
+      flash[:danger] = "You don't have rights, please log in first."
+      redirect_to admin_login_path
+    end
   end
 
   def create

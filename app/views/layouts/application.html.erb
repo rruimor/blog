@@ -7,38 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to "Blog", root_path, class: "navbar-brand" %>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><%= link_to "Posts", posts_path %></li>
-          <li><%= link_to "About", about_path%></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-         <li class="icon-header"><a href="https://twitter.com/rafapocho"><span class="icon-twitter2"></span></a></li>
-         <li class="icon-header"><a href="https://github.com/rruimor"><span class="icon-github"></span></a></li>
-         <li class="icon-header"><a href="mailto:rruimor459@gmail.com"><span class="glyphicon glyphicon-envelope"></span></a></li>
-         <% if logged_in? %>
-           <li><%= link_to "Log out", admin_logout_path, method: "delete" %></li>
-         <% end %>
-        </ul>
-      </div>  
-    </div>
-  </nav>
-
+  <%= render 'header' %>
   <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg.html_safe, class: "alert alert-#{name}") %>
     <% end %>
-
   <div class="container main-content">
     <%= yield %>
   </div>

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-fixed-top navbar-inverse">  
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Blog", root_path, class: "navbar-brand" %>
+    </div>
+    <% if logged_in? %>
+      <%= render 'admin_header' %>
+    <% else %>
+      <%= render 'public_header' %>
+    <% end %>
+  
+  </div>
+</nav>
