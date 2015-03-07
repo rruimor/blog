@@ -6,15 +6,15 @@ RSpec.describe Post, type: :model do
   end
   
   describe "validations" do
-	  it "is invalid without a title" do
+	  it "should be invalid without a title" do
 	  	FactoryGirl.build(:post, title: nil).should_not be_valid
 	  end
 	    
-	  it "is invalid with a less than 5 chararacters title" do
+	  it "should be invalid with less than 5 chararacters title" do
 	  	FactoryGirl.build(:post, title: "Four").should_not be_valid
 	  end
 	  
-	  it "is invalid without a body" do
+	  it "should be invalid without a body" do
 	  	FactoryGirl.build(:post, body: nil).should_not be_valid
 	  end
   end
