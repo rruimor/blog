@@ -16,8 +16,10 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-
+# This file is copied to spec/ when you run 'rails generate rspec:install'
 require "capybara/rspec"
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
