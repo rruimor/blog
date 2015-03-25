@@ -7,8 +7,9 @@
 	  <% if logged_in? %>| <%= link_to "Edit", edit_post_path(@post) %>
 	  | <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
 	</p>
+  <hr>
 	<p class="body">
-	  <%= @post.body %>
+	  <%= @post.formatted_text %>
 	</p>
 </div>
 <div id="comments">

@@ -2,6 +2,7 @@
   <div class="post_wrapper jumbotron">
     <h2 class="title"><%= link_to post.title, post %></h2>
     <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
-    <p class="index-comments"><%= post.comments.count %> Comments</p>
+    <hr>
+    <p class="index-comments"><%= pluralize(post.comments.count, "comment") %></p>
   </div>
 <% end %>

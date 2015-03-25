@@ -14,4 +14,15 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require autosize.min
 //= require_tree .
+
+var ready;
+ready = function() {
+
+  autosize($('textarea'));
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
