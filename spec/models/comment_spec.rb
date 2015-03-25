@@ -15,6 +15,20 @@ RSpec.describe Comment, type: :model do
     end
   end
 
+  describe "admin comments" do
+
+    before(:each) do
+      @admin = FactoryGirl.create(:admin_user)
+
+    end
+
+    it "should link the comment to the admin user when logged in" do
+      # admin_comment = FactoryGirl.create(:comment, admin_id: current_admin)
+      # admin_comment.admin_id.should eql(1)
+    end
+
+  end
+
   describe "#name" do
     context "Anonymous comments" do
       it "should return 'Anonymous' as the author" do

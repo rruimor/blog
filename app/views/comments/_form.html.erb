@@ -4,8 +4,10 @@
     	<%= f.label :name, "Your name" %><span> (optional)</span>
     	<%= f.text_field :name, class: "form-control" %>
 
-    	<%= f.label :body, "Your comment" %>
+    	<%= f.label :body, "Your comment", class: "form-label" %>
     	<%= f.text_area :body, class: "form-control" %>
+
+      <%#= if logged_in? f.hidden_field, :admin_id, value:  %>
 
     	<%= f.submit 'Add Comment', class: "btn btn-primary", id: "btn-submit-comment" %>
     <% end %>

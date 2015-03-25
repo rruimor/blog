@@ -5,4 +5,5 @@ class Comment < ActiveRecord::Base
   def author
     self.name.blank? ? "Anonymous" : self.name
   end
+
 end
